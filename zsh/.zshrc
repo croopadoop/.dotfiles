@@ -1,6 +1,5 @@
 # Setting the PS1 variable
-PS1='[%F{#21c7a8}%n%f%F{#c5e478}@%f%F{#C792EA}%m%f][%~] $ '
-# Lines configured by zsh-newuser-install
+PS1='[%F{#21c7a8}%n%f@%F{#C792EA}%m%f %~] $ '
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -11,9 +10,12 @@ bindkey -e
 zstyle :compinstall filename '/home/croopadoop/.zshrc'
 setopt auto_cd
 
-autoload -Uz compinit
+autoload -Uz compinit promptinit
 compinit
-# End of lines added by compinstall
+promptinit
+
+# Set the prompt theme
+prompt walters
 
 # Git versioning
 autoload -Uz vcs_info # enable version control info
